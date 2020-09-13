@@ -1,7 +1,15 @@
 import React from "react"
 
-function AboutPage() {
-  return <div>About page</div>
+import Layout from "../components/layout"
+
+const AboutPage = () => {
+  return (
+    <div>
+      <Layout>
+        <div>About page</div>
+      </Layout>
+    </div>
+  )
 }
 
 export default AboutPage

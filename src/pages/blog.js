@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 
@@ -12,6 +12,9 @@ function BlogPage() {
             frontmatter {
               title
               date
+            }
+            fields {
+              slug
             }
           }
         }
@@ -27,8 +30,10 @@ function BlogPage() {
           {data.allMarkdownRemark.edges.map((edge, i) => {
             return (
               <li key={i}>
-                <h2>{edge.node.frontmatter.title}</h2>
-                <p>{edge.node.frontmatter.date}</p>
+                <Link to={`/blog/${edge.node.fields.slug}`}>
+                  <h2>{edge.node.frontmatter.title}</h2>
+                  <p>{edge.node.frontmatter.date}</p>
+                </Link>
               </li>
             )
           })}

@@ -7,7 +7,9 @@ module.exports = {
     title: "Suyeonme",
     author: "Suyeon",
   },
-  plugins: [{
+  plugins: [
+    'gatsby-plugin-react-helmet',
+    {
       resolve: "gatsby-source-contentful",
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,

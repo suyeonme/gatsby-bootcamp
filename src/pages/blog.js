@@ -2,27 +2,10 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import blogStyles from "./blog.module.scss"
+import Head from "../components/head"
 import Layout from "../components/layout"
 
 function BlogPage() {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(posts)/" } }) {
-  //       edges {
-  //         node {
-  //           frontmatter {
-  //             title
-  //             date
-  //           }
-  //           fields {
-  //             slug
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-
   const data = useStaticQuery(graphql`
     query {
       allContentfulBlogPost(
@@ -43,6 +26,7 @@ function BlogPage() {
   return (
     <div>
       <Layout>
+        <Head title="Blog" />
         <h1>Blog</h1>
         <ol className={blogStyles.posts}>
           {data.allContentfulBlogPost.edges.map((edge, i) => {

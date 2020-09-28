@@ -3,7 +3,7 @@ import React from "react"
 import "../styles/index.scss"
 import layoutStyles from "./layout.module.scss"
 
-import Header from "./Header"
+import Header from "./header"
 import Footer from "./footer"
 
 function Layout(props) {
